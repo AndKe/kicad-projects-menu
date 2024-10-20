@@ -1,0 +1,14 @@
+[Desktop Entry]
+X-SnapInstanceName=kicad
+Version=1.0
+Terminal=true
+Icon=/snap/kicad/14/meta/gui/kicad.svg
+Type=Application
+Categories=Science;Electronics;
+Exec=gnome-terminal -- bash -c '$HOME/kicad-projects.sh'
+StartupWMClass=kicad
+Keywords=Projectmanager;
+Name=KiCad-Projects
+GenericName=EDA Suite
+Comment=Suite of tools for schematic design and circuit board layout
+
