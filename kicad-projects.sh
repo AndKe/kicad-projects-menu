@@ -19,6 +19,24 @@ if [ ${#OPTIONS[@]} -eq 0 ]; then
     exit 1
 fi
 
+# Combine OPTIONS and PROJECTS into a single array of tuples
+combined=()
+for i in "${!OPTIONS[@]}"; do
+    combined+=("${OPTIONS[$i]}|${PROJECTS[$i]}")
+done
+
+# Sort it
+IFS=$'\n' sorted=($(sort <<<"${combined[*]}"))
+unset IFS
+
+# Split the sorted array back into OPTIONS and PROJECTS
+OPTIONS=()
+PROJECTS=()
+for entry in "${sorted[@]}"; do
+    OPTIONS+=("${entry%|*}")
+    PROJECTS+=("${entry#*|}")
+done
+
 # Function to display the menu
 print_menu() {
     for i in "${!OPTIONS[@]}"; do
