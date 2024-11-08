@@ -6,7 +6,6 @@ Icon=kicad.svg
 Type=Application
 Categories=Science;Electronics;
 Exec=gnome-terminal -- bash -c '$HOME/kicad-projects.sh'
-StartupWMClass=kicad
 Keywords=Projectmanager;
 Name=KiCad-Projects
 GenericName=EDA Suite
