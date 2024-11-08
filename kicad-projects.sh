@@ -55,6 +55,8 @@ print_menu() {
 selected=0
 
 # Main loop
+tput civis
+trap 'tput cnorm' EXIT
 while true; do
     clear
     echo "Use UP/DOWN arrow keys to navigate, Enter to select, ESC to exit."
